@@ -235,15 +235,28 @@ footer{padding:20px 0 32px;text-align:center;color:var(--dim);font-size:12.5px}
 .reveal.show{opacity:1;transform:none}
 
 @media(max-width:820px){
-  .hero-grid{grid-template-columns:1fr;gap:32px}
-  .hero-grid .photo-wrap{order:-1;max-width:240px;margin:0 auto}
+  .hero{padding:90px 0 50px}
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero-grid .photo-wrap{order:-1;width:190px!important;height:190px!important;margin:0 auto}
+  .hero-grid .photo-wrap svg.ring{inset:-22px!important;width:calc(100% + 44px)!important;height:calc(100% + 44px)!important}
   .hero-grid>div{text-align:center}
   .tag-line,.hero-btns,.facts,.now{justify-content:center}
-  .desc{margin-inline:auto}
+  .tag-line{font-size:10.5px;letter-spacing:.14em;flex-wrap:wrap}
+  h1{font-size:clamp(28px,8vw,40px)!important}
+  .title{font-size:16px}
+  .desc{margin-inline:auto;font-size:14.5px}
+  .hero-btns{gap:8px}
+  .hero-btns .btn{font-size:13px;padding:9px 16px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .fact{border-inline-end:none;border-bottom:1px solid var(--border)}
+  .fact:nth-child(odd){border-inline-end:1px solid var(--border)}
+  .fact:last-child,.fact:nth-last-child(2):nth-child(odd){border-bottom:none}
   .btm{grid-template-columns:1fr}
   .job-top{flex-direction:column;gap:6px}
+  .edu{flex-wrap:wrap;gap:12px}
+  .edu .yr{margin-inline-start:0}
 }
-@media(max-width:560px){.facts{flex-wrap:wrap}.fact{flex:0 0 50%;border-inline-end:none;border-bottom:1px solid var(--border)}.fact:nth-child(odd){border-inline-end:1px solid var(--border)}}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
