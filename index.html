@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0C1B33;
-  --bg2:#122545;
-  --card:#172840;
-  --card2:#1a2e49;
-  --border:rgba(94,160,255,.18);
+  --bg:#F5F3EE;
+  --bg2:#EDEAE3;
+  --card:#FFFFFF;
+  --card2:#F0EDE6;
+  --border:rgba(0,0,0,.10);
   --blue:#3B82F6;
   --blue2:#60A5FA;
   --sky:#BAD9FD;
-  --text:#EBF2FF;
-  --muted:#8BA8CC;
-  --dim:#506480;
+  --text:#1A2640;
+  --muted:#4A5E78;
+  --dim:#7A8C9E;
   --green:#34D399;
   --gold:#F4C558;
 }
@@ -34,13 +34,13 @@ a{color:inherit;text-decoration:none}
 
 /* ── nav ── */
 nav{position:fixed;top:3px;left:0;right:0;z-index:50;padding:13px 0;transition:background .3s}
-nav.bg{background:rgba(11,22,40,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--border)}
+nav.bg{background:rgba(245,243,238,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1040px;margin:0 auto;padding:0 28px}
-.nav-name{font-weight:800;font-size:16px;letter-spacing:.01em}
+.nav-name{font-weight:800;font-size:16px;letter-spacing:.01em;color:var(--text)}
 .lang-btn{
   font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;
-  background:rgba(59,130,246,.12);border:1.5px solid rgba(59,130,246,.45);
-  color:var(--blue2);padding:5px 18px;border-radius:99px;cursor:pointer;transition:.2s;
+  background:rgba(59,130,246,.08);border:1.5px solid rgba(59,130,246,.55);
+  color:var(--blue);padding:5px 18px;border-radius:99px;cursor:pointer;transition:.2s;
 }
 .lang-btn:hover{background:rgba(59,130,246,.25);color:#fff}
 
@@ -52,13 +52,13 @@ nav.bg{background:rgba(11,22,40,.95);backdrop-filter:blur(10px);box-shadow:0 1px
     radial-gradient(ellipse 800px 600px at 85% 40%,rgba(59,130,246,.18),transparent 60%),
     radial-gradient(ellipse 500px 400px at 5% 15%,rgba(59,130,246,.10),transparent 60%),
     radial-gradient(ellipse 400px 300px at 50% 100%,rgba(46,80,160,.12),transparent 55%),
-    linear-gradient(160deg,#091527 0%,#0C1B33 100%);
+    linear-gradient(160deg,#EEF0F5 0%,#F5F3EE 100%);
 }
 /* subtle diagonal lines */
 .hero::before{
   content:"";position:absolute;inset:0;
   background:repeating-linear-gradient(
-    -55deg,transparent,transparent 60px,rgba(59,130,246,.03) 60px,rgba(59,130,246,.03) 61px
+    -55deg,transparent,transparent 60px,rgba(59,130,246,.04) 60px,rgba(59,130,246,.04) 61px
   );pointer-events:none;
 }
 .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:center;position:relative;z-index:1}
@@ -70,8 +70,8 @@ nav.bg{background:rgba(11,22,40,.95);backdrop-filter:blur(10px);box-shadow:0 1px
 .photo-wrap img{
   width:100%;height:100%;object-fit:cover;object-position:top center;
   border-radius:50%;display:block;position:relative;z-index:1;
-  border:4px solid rgba(186,217,253,.8);
-  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 60px rgba(59,130,246,.2);
+  border:4px solid rgba(59,130,246,.5);
+  box-shadow:0 20px 60px rgba(0,0,0,.18),0 0 40px rgba(59,130,246,.15);
 }
 
 /* hero text */
@@ -84,7 +84,7 @@ nav.bg{background:rgba(11,22,40,.95);backdrop-filter:blur(10px);box-shadow:0 1px
 h1{font-size:clamp(36px,5.5vw,58px);font-weight:900;line-height:1.12;margin-bottom:6px}
 h1 span{color:var(--blue2)}
 .title{font-size:clamp(16px,2.2vw,21px);font-weight:600;color:var(--muted);margin-bottom:22px}
-.desc{color:#C2D5ED;font-size:15.5px;margin-bottom:28px;max-width:540px}
+.desc{color:#3A5070;font-size:15.5px;margin-bottom:28px;max-width:540px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
 .btn{
   display:inline-flex;align-items:center;gap:9px;
@@ -94,21 +94,22 @@ h1 span{color:var(--blue2)}
 .btn svg{width:17px;height:17px;fill:currentColor;flex-shrink:0}
 .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(59,130,246,.35)}
 .btn-primary:hover{background:#2563EB;transform:translateY(-2px)}
-.btn-ghost{background:rgba(255,255,255,.05);border:1.5px solid var(--border);color:#D1E5FF}
+.btn-ghost{background:rgba(255,255,255,.6);border:1.5px solid var(--border);color:#1A3560}
 .btn-ghost:hover{border-color:var(--blue2);background:rgba(59,130,246,.1)}
 .phone-btn{direction:ltr}
 
 /* quick facts strip */
-.facts{display:flex;gap:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.fact{flex:1;padding:16px 14px;text-align:center;border-inline-end:1px solid var(--border);position:relative}
-.fact:last-child{border-inline-end:none}
-.fact .n{font-size:clamp(22px,3vw,30px);font-weight:900;color:var(--blue2);direction:ltr;line-height:1.2}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.fact{padding:16px 14px;text-align:center;border-inline-end:1px solid var(--border);border-bottom:1px solid var(--border);position:relative}
+.fact:nth-child(4n){border-inline-end:none}
+.fact:nth-last-child(-n+4){border-bottom:none}
+.fact .n{font-size:clamp(22px,3vw,30px);font-weight:900;color:var(--blue);direction:ltr;line-height:1.2}
 .fact .l{font-size:12px;color:var(--muted);font-weight:600;margin-top:2px}
 
 /* ── section ── */
 section{padding:56px 0 8px}
 .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:26px}
-.sec-head h2{font-size:20px;font-weight:800;color:var(--text)}
+.sec-head h2{font-size:20px;font-weight:800;color:#0C1B33}
 .sec-head .icon{
   width:38px;height:38px;border-radius:10px;flex-shrink:0;
   background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.4);
@@ -129,9 +130,9 @@ section{padding:56px 0 8px}
 .job.current::before{background:var(--blue);box-shadow:0 0 14px rgba(59,130,246,.5)}
 .job:hover{border-color:rgba(59,130,246,.5);transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.35)}
 .job-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;margin-bottom:14px}
-.job h3{font-size:18px;font-weight:800}
-.job .co{color:var(--blue2);font-size:14px;font-weight:700;margin-top:2px}
-.now{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:800;color:var(--blue2);margin-top:6px}
+.job h3{font-size:18px;font-weight:800;color:#0C1B33}
+.job .co{color:var(--blue);font-size:14px;font-weight:700;margin-top:2px}
+.now{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:800;color:var(--blue);margin-top:6px}
 .now .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:pulse 2s ease infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(59,130,246,.15)}}
 .dates{
@@ -141,17 +142,17 @@ section{padding:56px 0 8px}
 }
 .job ul{list-style:none}
 .job li{
-  padding-inline-start:20px;margin-bottom:6px;color:#BCCFE8;font-size:14.5px;
+  padding-inline-start:20px;margin-bottom:6px;color:#3A4E6A;font-size:14.5px;
   position:relative;
 }
 .job li::before{
   content:"";position:absolute;inset-inline-start:4px;top:10px;
-  width:7px;height:7px;border-radius:50%;background:rgba(59,130,246,.5);
+  width:7px;height:7px;border-radius:50%;background:rgba(59,130,246,.6);
 }
 .impact{
-  margin-top:14px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.35);
+  margin-top:14px;background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.3);
   border-inline-start:3.5px solid var(--blue);border-radius:8px;
-  padding:12px 16px;font-size:14px;color:#D4E8FF;
+  padding:12px 16px;font-size:14px;color:#1A3560;
   display:flex;gap:10px;align-items:flex-start;
 }
 .impact svg{width:17px;height:17px;fill:var(--blue2);flex-shrink:0;margin-top:4px}
@@ -165,9 +166,9 @@ section{padding:56px 0 8px}
 }
 .cert-chip:hover{border-color:var(--blue);box-shadow:0 6px 20px rgba(59,130,246,.2);transform:translateY(-1px)}
 .cert-chip img{width:40px;height:52px;object-fit:cover;object-position:top;border-radius:4px;border:1px solid var(--border);display:block}
-.cert-chip .ct{font-size:13px;font-weight:800;color:var(--text)}
-.cert-chip .cs{font-size:11.5px;color:var(--blue2);font-weight:600;margin-top:2px}
-.verified{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--green)}
+.cert-chip .ct{font-size:13px;font-weight:800;color:#1A2640}
+.cert-chip .cs{font-size:11.5px;color:var(--blue);font-weight:600;margin-top:2px}
+.verified{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#0A7A42}
 .verified svg{width:16px;height:16px;fill:var(--green)}
 
 /* ── bottom grid ── */
@@ -177,7 +178,7 @@ section{padding:56px 0 8px}
 .c-list{list-style:none}
 .c-item{
   display:flex;align-items:center;gap:12px;padding:10px 0;
-  border-bottom:1px solid var(--border);font-size:14.5px;font-weight:600;color:var(--text);
+  border-bottom:1px solid var(--border);font-size:14.5px;font-weight:600;color:#1A2640;
 }
 .c-item:last-child{border-bottom:none}
 .c-ck{
@@ -189,11 +190,11 @@ section{padding:56px 0 8px}
 
 /* skills */
 .skill-group{margin-bottom:18px}
-.skill-group h4{font-size:12.5px;color:var(--dim);font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px}
+.skill-group h4{font-size:12.5px;color:#7A8C9E;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-size:13px;font-weight:600;background:var(--card2);border:1px solid var(--border);color:#CFE0FA;padding:5px 15px;border-radius:6px;transition:.2s}
+.tag{font-size:13px;font-weight:600;background:var(--card2);border:1px solid var(--border);color:#2A4070;padding:5px 15px;border-radius:6px;transition:.2s}
 .tag:hover{border-color:var(--blue2)}
-.tag.t{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.45);color:var(--blue2)}
+.tag.t{background:rgba(59,130,246,.08);border-color:rgba(59,130,246,.5);color:var(--blue)}
 
 /* education */
 .edu{
@@ -202,21 +203,21 @@ section{padding:56px 0 8px}
 }
 .edu .cap{width:46px;height:46px;border-radius:10px;flex-shrink:0;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.4);display:flex;align-items:center;justify-content:center}
 .edu .cap svg{width:24px;height:24px;fill:var(--blue2)}
-.edu h3{font-size:16px;font-weight:800}
+.edu h3{font-size:16px;font-weight:800;color:#0C1B33}
 .edu p{color:var(--muted);font-size:13.5px}
 .edu .yr{margin-inline-start:auto;color:var(--green);font-weight:700;font-size:13px;direction:ltr;white-space:nowrap}
 
 /* ── CTA ── */
 .cta-band{
   margin-top:70px;padding:60px 0 70px;text-align:center;
-  background:radial-gradient(ellipse 700px 300px at 50% 0%,rgba(59,130,246,.18),transparent 70%);
-  border-top:1px solid var(--border);
+  background:radial-gradient(ellipse 700px 300px at 50% 0%,rgba(59,130,246,.08),transparent 70%);
+  border-top:1px solid var(--border);background-color:#EDEAE3;
 }
-.cta-band h2{font-size:clamp(22px,4vw,34px);font-weight:900;margin-bottom:8px}
-.cta-band p{color:var(--muted);margin-bottom:26px;font-size:15px}
+.cta-band h2{font-size:clamp(22px,4vw,34px);font-weight:900;margin-bottom:8px;color:#0C1B33}
+.cta-band p{color:#4A5E78;margin-bottom:26px;font-size:15px}
 .cta-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-footer{padding:20px 0 32px;text-align:center;color:var(--dim);font-size:12.5px}
+footer{padding:20px 0 32px;text-align:center;color:var(--dim);font-size:12.5px;background:#E8E5DE}
 
 /* ── lightbox ── */
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:120;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(6px)}
@@ -295,10 +296,14 @@ footer{padding:20px 0 32px;text-align:center;color:var(--dim);font-size:12.5px}
         </a>
       </div>
       <div class="facts reveal" id="facts">
-        <div class="fact"><div class="n" data-count="5" data-suffix="+">0</div><div class="l" data-i="s1"></div></div>
-        <div class="fact"><div class="n" data-count="300" data-suffix="+">0</div><div class="l" data-i="s2"></div></div>
+        <div class="fact"><div class="n" data-count="6" data-suffix="+">0</div><div class="l" data-i="s1"></div></div>
+        <div class="fact"><div class="n" data-count="400" data-suffix="+">0</div><div class="l" data-i="s2"></div></div>
         <div class="fact"><div class="n" data-count="12">0</div><div class="l" data-i="s3"></div></div>
-        <div class="fact"><div class="n" data-count="4">0</div><div class="l" data-i="s4"></div></div>
+        <div class="fact"><div class="n" data-count="1000" data-suffix="+">0</div><div class="l" data-i="s4"></div></div>
+        <div class="fact"><div class="n" data-count="40" data-suffix="M+">0</div><div class="l" data-i="s5"></div></div>
+        <div class="fact"><div class="n" data-count="100" data-suffix="%">0</div><div class="l" data-i="s6"></div></div>
+        <div class="fact"><div class="n" data-count="100" data-suffix="+">0</div><div class="l" data-i="s7"></div></div>
+        <div class="fact"><div class="n" data-count="400" data-suffix="+">0</div><div class="l" data-i="s8"></div></div>
       </div>
     </div>
     <div class="photo-wrap">
@@ -306,7 +311,7 @@ footer{padding:20px 0 32px;text-align:center;color:var(--dim);font-size:12.5px}
         <defs>
           <path id="c1" d="M150,150 m-126,0 a126,126 0 1,1 252,0 a126,126 0 1,1 -252,0"/>
         </defs>
-        <text font-size="12" font-weight="700" fill="rgba(186,217,253,.8)" font-family="Arial,Helvetica,sans-serif" letter-spacing="3.5">
+        <text font-size="12" font-weight="700" fill="rgba(30,80,160,.55)" font-family="Arial,Helvetica,sans-serif" letter-spacing="3.5">
           <textPath href="#c1">SENIOR ACCOUNTANT  *  ERP PROFESSIONAL  *  SOCPA ASSOCIATE  *  </textPath>
         </text>
       </svg>
@@ -394,9 +399,9 @@ en:{
   eyebrow:"Senior Accountant · Riyadh, Saudi Arabia",
   h1:"Omar\nAlhabib",
   role:"Senior Accountant — SOCPA Associate Member",
-  desc:"5+ years of hands-on experience across international consulting, construction, and wholesale & retail. Proficient in ERP systems, financial reporting, VAT compliance, and period-end closing.",
+  desc:"6+ years of experience in multinational consulting, engineering, construction, and wholesale industries. Detail-oriented finance professional with a proven ability to improve accounting processes, strengthen internal controls, and deliver accurate financial reporting.",
   btn_email:"Email Me",
-  s1:"Yrs Experience",s2:"POs / Month",s3:"Banks Reconciled",s4:"ERP Systems",
+  s1:"Years Experience",s2:"Invoices / Mo.",s3:"Bank Accounts",s4:"Employees Payroll",s5:"Monthly Payments",s6:"Bank Reconciliation",s7:"Vendor Payments / Mo.",s8:"Accounts",
   h_exp:"Work Experience",h_cert:"Certifications",h_skills:"Skills",h_edu:"Education",
   edu_deg:"Bachelor's Degree in Accounting",edu_uni:"Qassim University",
   cta:"Open to new opportunities",
@@ -406,24 +411,21 @@ en:{
   now_lbl:"Currently here",
   jobs:[
     {dates:"Feb 2025 — Present",title:"Senior Accountant",co:"KEO International Consultants",current:true,
-     pts:["Prepare and review general ledger entries, financial statements, and balance sheets.",
-          "Process payroll, EOS liabilities, and allowances with timely payment.",
-          "Prepare zakat and tax reports (VAT & WHT) meeting all statutory deadlines.",
-          "Review and approve POs, vendor invoices, consultant claims, and expenses with proper project cost allocation.",
-          "Perform bank reconciliations, payment verifications, and cash collection follow-ups.",
-          "Manage internal bank transfers, payroll payments, e-payments, and virtual cards.",
-          "Review contracts from an accounting perspective to protect company interests.",
-          "Manage project bank guarantees from issuance to release, linked to contract terms.",
-          "Update and monitor Power BI dashboards for bank accounts and project guarantees.",
-          "Create and update vendors and customers in ERP with periodic balance reconciliations."],
-     hl:"~300 POs processed monthly · 12 bank accounts reconciled · GOSI, WHT & VAT managed — driving faster, more efficient financial closing."},
+     pts:["Managed the full Accounts Payable (AP) cycle by processing 400+ monthly vendor invoices, 300+ POs, and 400+ vendor accounts, ensuring project cost allocation, policy compliance, and timely payments.",
+          "Managed Accounts Receivable (AR) activities, including customer invoicing, collections, payment allocation, account reconciliations, and revenue-related adjustments.",
+          "Managed treasury operations across 12 bank accounts, 3 legal entities, and 7+ banking platforms, executing 100+ monthly payment transactions exceeding SAR 40M, including bank transfers, virtual cards, SADAD, payroll funding, intercompany settlements, and cheque payments.",
+          "Performed monthly bank reconciliations for 12 bank accounts, ensuring 100% reconciliation between bank and GL, while managing Tender Bonds (TB) and Performance Bonds (PB) throughout their lifecycle.",
+          "Managed payroll accounting for 1,000+ employees, including payroll journal entries, End-of-Service (EOS), employee allowances, payroll funding, cheque processing, GOSI, and employee insurance.",
+          "Managed the end-to-end accounting cycle for international consultants, including timesheet verification, invoice preparation, journal entries, and payment processing per contractual agreements.",
+          "Prepared monthly VAT and WHT schedules for AP/AR transactions, validating Input VAT, Output VAT, and Reverse Charge, while coordinating with EY to resolve tax queries and support statutory compliance.",
+          "Led the General Ledger (GL) and month-end close by posting journal entries for payroll, EOS, accruals, prepayments, depreciation, amortization, reclassifications, consultant accounting, FX differences, bank charges, corporate cards, and fuel allocation."],
+     hl:"400+ vendor invoices & 300+ POs processed monthly · 12 bank accounts across 3 legal entities · SAR 40M+ in monthly payments · Payroll for 1,000+ employees — all reconciled with 100% accuracy."},
     {dates:"Jan 2023 — Feb 2025",title:"Accountant",co:"Transmission Lines Company",cert:"tlc",
      pts:["Oversaw the full accounting cycle: GL, AP/AR, and financial reporting.",
           "Prepared and posted journal entries for accruals, deferrals, and adjustments.",
           "Reconciled AP/AR and improved working capital via aging and payment schedules.",
           "Computed and filed VAT returns, reducing the risk of penalties.",
-          "Handled monthly, quarterly, and annual closings, meeting all deadlines.",
-          "Prepared financial statements: income statement, balance sheet, and cash flow."]},
+          "Handled monthly, quarterly, and annual closings, meeting all deadlines."]},
     {dates:"Dec 2020 — Aug 2022",title:"Accountant",co:"Universal Cold Stores",cert:"ucs",
      pts:["Managed supplier transactions, reconciliations, and reporting via Oracle ERP and Excel.",
           "Prepared monthly reports on payment obligations and monitored financial performance.",
@@ -442,9 +444,9 @@ ar:{
   eyebrow:"محاسب أول · الرياض، المملكة العربية السعودية",
   h1:"عمر\nالحبيب",
   role:"محاسب أول — عضو مشارك في هيئة المحاسبين السعوديين",
-  desc:"أكثر من 5 سنوات خبرة عملية في شركة استشارية دولية، وقطاع المقاولات، وقطاع الجملة والتجزئة. محترف في أنظمة ERP، وإعداد التقارير المالية، والامتثال الضريبي، وإقفال الفترات المالية.",
+  desc:"محاسب أول بخبرة تزيد عن 6 سنوات في شركات استشارية وهندسية متعددة الجنسيات، وقطاع المقاولات، وقطاع الجملة والتجزئة. أتمتع بخبرة في تحسين العمليات المحاسبية، وتعزيز الرقابة الداخلية، وإعداد التقارير المالية الدقيقة.",
   btn_email:"راسلني",
-  s1:"سنوات خبرة",s2:"أمر شراء / شهر",s3:"حساب بنكي",s4:"أنظمة ERP",
+  s1:"سنوات خبرة",s2:"فاتورة / شهر",s3:"حساب بنكي",s4:"موظف رواتب",s5:"دفعات شهرية",s6:"دقة المطابقة البنكية",s7:"دفعة مورد / شهر",s8:"حساب",
   h_exp:"الخبرات العملية",h_cert:"الشهادات والدورات",h_skills:"المهارات",h_edu:"التعليم",
   edu_deg:"بكالوريوس في المحاسبة",edu_uni:"جامعة القصيم",
   cta:"جاهز للفرصة القادمة",
@@ -454,24 +456,21 @@ ar:{
   now_lbl:"الوظيفة الحالية",
   jobs:[
     {dates:"Feb 2025 — Present",title:"محاسب أول",co:"شركة كيو إنترناشونال كونسلتنتس (KEO)",current:true,
-     pts:["إعداد ومراجعة القيود المحاسبية العامة والقوائم المالية والميزانيات.",
-          "معالجة مخصصات الرواتب ومستحقات نهاية الخدمة والبدلات وصرفها في الوقت المناسب.",
-          "إعداد تقارير الزكاة والضرائب (VAT وWHT) والالتزام بالمواعيد النظامية.",
-          "مراجعة واعتماد أوامر الشراء وفواتير الموردين والمصاريف وربطها بالمشاريع.",
-          "إجراء التسويات البنكية والتحقق من المدفوعات ومتابعة التحصيل.",
-          "إدارة التحويلات البنكية الداخلية والرواتب والمدفوعات الإلكترونية والبطاقات.",
-          "مراجعة العقود من منظور محاسبي لضمان صحة البنود المالية.",
-          "إدارة الضمانات البنكية للمشاريع من الإصدار حتى الاسترداد.",
-          "تحديث ومتابعة لوحات Power BI المرتبطة بالحسابات البنكية وضمانات المشاريع.",
-          "إنشاء وتحديث حسابات الموردين والعملاء مع مطابقة دورية للأرصدة."],
-     hl:"معالجة ~300 أمر شراء شهريًا · مطابقة 12 حسابًا بنكيًا · إدارة GOSI وWHT وVAT — بما عزّز كفاءة وسرعة الإقفال المالي."},
+     pts:["إدارة دورة الحسابات الدائنة (AP) بالكامل من خلال معالجة أكثر من 400 فاتورة مورد شهريًا، و+300 أمر شراء، وإدارة أكثر من 400 حساب مورد، مع ضمان التوجيه الصحيح لتكاليف المشاريع والالتزام بالسياسات.",
+          "إدارة عمليات الحسابات المدينة (AR)، بما في ذلك إصدار فواتير العملاء، ومتابعة التحصيلات، وتخصيص المدفوعات، ومطابقة الحسابات.",
+          "إدارة عمليات الخزينة عبر 12 حسابًا بنكيًا و3 كيانات قانونية وأكثر من 7 منصات مصرفية، مع تنفيذ أكثر من 100 عملية دفع شهريًا بقيمة تتجاوز 40 مليون ريال سعودي.",
+          "إعداد التسويات البنكية الشهرية لـ 12 حسابًا بنكيًا، وضمان التطابق الكامل بين كشوفات البنوك والأستاذ العام، إلى جانب إدارة الضمانات البنكية للمشاريع (TB وPB).",
+          "إدارة المحاسبة المتعلقة بالرواتب لأكثر من 1,000 موظف، بما في ذلك قيود الرواتب، ومكافآت نهاية الخدمة، والبدلات، وتمويل الرواتب، والتأمينات الاجتماعية.",
+          "إدارة الدورة المحاسبية الكاملة للمستشارين الدوليين، بما يشمل مراجعة الساعات، وإعداد الفواتير، وإثبات القيود المحاسبية، وتنفيذ المدفوعات وفقًا للعقود.",
+          "إعداد تقارير ضريبة القيمة المضافة وضريبة الاستقطاع شهريًا، والتحقق من ضريبة المدخلات والمخرجات وآلية الاحتساب العكسي، والتنسيق مع شركة EY.",
+          "قيادة أعمال الأستاذ العام والإقفال الشهري من خلال إعداد القيود المحاسبية الخاصة بالرواتب، والمستحقات، والمصروفات المقدمة، والإهلاك، وفروقات العملات، والرسوم البنكية."],
+     hl:"أكثر من 400 فاتورة مورد و300 أمر شراء شهريًا · 12 حسابًا بنكيًا عبر 3 كيانات قانونية · أكثر من 40 مليون ريال دفعات شهرية · رواتب لأكثر من 1,000 موظف — بمطابقة كاملة 100%."},
     {dates:"Jan 2023 — Feb 2025",title:"محاسب",co:"شركة الخطوط الناقلة",cert:"tlc",
      pts:["الإشراف على دورة المحاسبة المالية الكاملة: الحسابات العامة والدائنة والمدينة.",
           "إعداد وتسجيل القيود اليومية للاستحقاقات والتأجيلات والتسويات.",
           "مطابقة الحسابات الدائنة والمدينة وتحسين رأس المال العامل.",
           "حساب ضريبة القيمة المضافة وإعداد الإقرارات وتقليل الملاحظات الرقابية.",
-          "إدارة الإقفالات الشهرية والربع سنوية والسنوية في مواعيدها.",
-          "إعداد القوائم المالية: قائمة الدخل، الميزانية العمومية، التدفقات النقدية."]},
+          "إدارة الإقفالات الشهرية والربع سنوية والسنوية في مواعيدها."]},
     {dates:"Dec 2020 — Aug 2022",title:"محاسب",co:"شركة الثلاجة العالمية",cert:"ucs",
      pts:["إدارة معاملات الموردين والتسويات والتقارير المالية باستخدام Oracle ERP وExcel.",
           "إعداد تقارير شهرية عن التزامات الدفع ومراقبة الأداء المالي.",
@@ -486,7 +485,6 @@ ar:{
   ]
 }
 };
-
 let LANG='en';
 const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
